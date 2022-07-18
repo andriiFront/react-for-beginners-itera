@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import data from './data.json';
-import { Data } from './Data';
-import { FooterComponent } from './FooterComponent';
+import { Data } from './Data/Data';
+import { FooterComponent } from './FooterComponent/FooterComponent';
 
 const App = () => {
   const callback = (url: string) => {
