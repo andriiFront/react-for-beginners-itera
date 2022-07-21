@@ -3,18 +3,21 @@ import './App.scss';
 import data from './data.json';
 import { Data } from './Data/Data';
 import { FooterComponent } from './FooterComponent/FooterComponent';
+import { Ctx } from './Context/context';
 
 const App = () => {
   const callback = (url: string) => {
     console.log(`redirecting user to the next ${url}`)
   };
 
-  return (
+  return ( 
     <div className="App">
       <header className="App-header">
-        <Data data={data.firstName} />
-        <Data data={data.email} />
-        <Data data={data.phone} />
+        <Ctx.Provider value={data}>
+          <Data />
+          <Data />
+          <Data />
+        </Ctx.Provider>
       </header>
       <footer>
         <FooterComponent
